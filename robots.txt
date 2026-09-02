@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /planner/
+Disallow: /client/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /sql/
+
+Sitemap: https://adeshandco.example.com/sitemap.xml
