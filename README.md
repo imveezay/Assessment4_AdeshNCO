@@ -9,42 +9,6 @@ ICT726 Assignment 4 — PHP + MySQL conversion of the Assessment 3 static site
 - MySQL 5.7+ / MariaDB 10.3+
 - Apache (with `mod_rewrite`/`.htaccess` support) — e.g. XAMPP, WAMP, MAMP, or `php -S`
 
-## Setup
-
-1. **Copy the project** into your server's web root, e.g. for XAMPP:
-   `C:\xampp\htdocs\adesh-and-co\` or `/Applications/XAMPP/htdocs/adesh-and-co/`.
-
-2. **Create the database.** Open phpMyAdmin (or the `mysql` CLI) and run:
-   ```
-   mysql -u root -p < sql/schema.sql
-   ```
-   This creates the `adesh_and_co` database, all five tables, and seeds
-   packages, gallery images, testimonials and a sample enquiry.
-
-3. **Create the demo accounts.** The schema deliberately does NOT insert
-   users with a hard-coded password hash — run this once instead so
-   passwords are hashed correctly by PHP:
-   ```
-   php sql/seed_users.php
-   ```
-   or open `http://localhost/adesh-and-co/sql/seed_users.php` in a browser.
-   This creates:
-
-   | Role    | Email                        | Password   |
-   |---------|------------------------------|------------|
-   | Admin   | admin@adeshandco.com.au      | Passw0rd!  |
-   | Planner | planner@adeshandco.com.au    | Passw0rd!  |
-   | Client  | client@example.com           | Passw0rd!  |
-
-   **Delete `sql/seed_users.php` (or move it outside the web root) once
-   you've run it once** — it's only meant to be run a single time during
-   setup.
-
-4. **Check the DB credentials** in `config/db.php` match your local
-   MySQL setup (defaults match a stock XAMPP install: host `localhost`,
-   user `root`, empty password).
-
-5. **Visit the site**: `http://localhost/adesh-and-co/index.php`
 
 ## Project structure
 
@@ -100,13 +64,3 @@ of the wrong role.
   4MB, and renamed to a random filename before being stored.
 - `config/`, `includes/` and `sql/` are blocked from direct HTTP access
   via `.htaccess`.
-
-## Notes for markers
-
-This project was built and validated by hand in an environment without a
-live PHP/MySQL server available for execution — please run it locally
-(e.g. XAMPP) to test the live functionality end-to-end. All queries use
-prepared statements, and standard, well-documented PHP/PDO/session APIs
-throughout, so it should run without modification once the database is
-imported and the DB credentials in `config/db.php` are confirmed.
-"# Assessment4_AdeshNCO" 
