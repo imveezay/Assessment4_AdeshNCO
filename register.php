@@ -81,17 +81,17 @@ require __DIR__ . '/includes/header.php';
             <?= csrf_field() ?>
             <div class="field">
               <label for="full_name">Full name <span class="required">*</span></label>
-              <input type="text" id="full_name" name="full_name" required autocomplete="name" data-validate="name" aria-describedby="full_name-error" value="<?= e($old['full_name']) ?>">
+              <input type="text" id="full_name" name="full_name" required maxlength="100" autocomplete="name" data-validate="name" aria-describedby="full_name-error" value="<?= e($old['full_name']) ?>">
               <span class="field-error" id="full_name-error"><?= e($errors['full_name'] ?? '') ?></span>
             </div>
             <div class="field">
               <label for="email">Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" data-validate="email" aria-describedby="email-error" value="<?= e($old['email']) ?>">
+              <input type="email" id="email" name="email" required maxlength="150" autocomplete="email" data-validate="email" aria-describedby="email-error" value="<?= e($old['email']) ?>">
               <span class="field-error" id="email-error"><?= e($errors['email'] ?? '') ?></span>
             </div>
             <div class="field">
               <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-error" value="<?= e($old['phone']) ?>">
+              <input type="tel" id="phone" name="phone" maxlength="30" autocomplete="tel" aria-describedby="phone-error" value="<?= e($old['phone']) ?>">
               <span class="field-error" id="phone-error"><?= e($errors['phone'] ?? '') ?></span>
             </div>
             <div class="field">
